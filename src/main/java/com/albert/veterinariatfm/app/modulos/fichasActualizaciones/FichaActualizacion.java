@@ -20,6 +20,12 @@ public class FichaActualizacion {
     @Column (name = "esUrgencia")
     boolean esUrgencia;
 
+    @Column (name = "costo")
+    double costo;
+
+    @Column (name = "formaPago")
+    String formaPago;
+
     @Column (name = "idFicha")
     Long idFicha;
 
