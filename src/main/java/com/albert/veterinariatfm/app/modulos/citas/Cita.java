@@ -1,10 +1,11 @@
 package com.albert.veterinariatfm.app.modulos.citas;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 @Table (name = "citas")
-
 public class Cita {
 
     @Id
@@ -20,9 +21,9 @@ public class Cita {
     @Column (name = "hora")
     String hora;
 
-    @Column (name = "idAnimal")
-    Long idAnimal;
+    @Column (name = "id_ficha")
+    Long idFicha;
 
-    @Column (name = "idVet")
+    @Column (name = "id_vet")
     Long idVet;
 }

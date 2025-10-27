@@ -14,9 +14,9 @@ public class FichaService {
 
     FichaRepository fichaRepository;
     @Transactional
-    public List<Ficha> obtenerFichas (){
+    public List<FichaDTO> obtenerFichas (){
 
-        return fichaRepository.findAll();
+        return fichaRepository.findAllConRaza();
 
     }
     @Transactional

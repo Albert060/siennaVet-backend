@@ -1,9 +1,11 @@
 package com.albert.veterinariatfm.app.modulos.razas;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table (name = "razas")
+@Data
 public class Raza {
 
     @Id

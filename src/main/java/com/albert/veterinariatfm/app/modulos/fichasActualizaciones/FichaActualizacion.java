@@ -1,10 +1,11 @@
 package com.albert.veterinariatfm.app.modulos.fichasActualizaciones;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table (name = "fichaActualizacion")
-
+@Data
 public class FichaActualizacion {
 
     @Id
@@ -17,18 +18,18 @@ public class FichaActualizacion {
     @Column (name = "fecha")
     String fecha;
 
-    @Column (name = "esUrgencia")
+    @Column (name = "es_Urgencia")
     boolean esUrgencia;
 
     @Column (name = "costo")
     double costo;
 
-    @Column (name = "formaPago")
+    @Column (name = "forma_pago")
     String formaPago;
 
-    @Column (name = "idFicha")
+    @Column (name = "id_ficha")
     Long idFicha;
 
-    @Column (name = "idVet")
+    @Column (name = "id_vet")
     Long idVet;
 }

@@ -15,7 +15,7 @@ public class FichaController {
     FichaService fichaService;
 
     @GetMapping
-    public List<Ficha> mostrarFichas (){
+    public List<FichaDTO> mostrarFichas (){
 
         return fichaService.obtenerFichas();
 

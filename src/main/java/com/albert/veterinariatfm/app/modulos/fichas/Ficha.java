@@ -1,10 +1,11 @@
 package com.albert.veterinariatfm.app.modulos.fichas;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table (name = "fichas")
-
+@Data
 public class Ficha {
 
     @Id
@@ -26,13 +27,10 @@ public class Ficha {
     @Column (name = "chip")
     String chip;
 
-    @Column (name = "idAnimal")
-    Long idAnimal;
-
-    @Column (name = "idRaza")
+    @Column (name = "id_raza")
     Long idRaza;
 
-    @Column (name = "idCliente")
+    @Column (name = "id_cliente")
     Long idCliente;
 
 }
