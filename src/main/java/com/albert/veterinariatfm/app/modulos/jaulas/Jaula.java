@@ -17,5 +17,4 @@ public class Jaula {
 
     @Column (name = "disponibilidad")
     String disponibilidad;
-
 }

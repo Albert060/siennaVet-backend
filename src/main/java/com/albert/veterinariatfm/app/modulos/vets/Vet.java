@@ -3,6 +3,10 @@ package com.albert.veterinariatfm.app.modulos.vets;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * Funcion donde se van a gestionar los parametros (Variable) que se van a solicitar para los diferentes
+ * registro y comunicacion con la base de dato
+ */
 @Data
 @Entity
 @Table (name = "vets")

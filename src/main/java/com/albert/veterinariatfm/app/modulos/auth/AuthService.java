@@ -15,9 +15,7 @@ public class AuthService {
     @Autowired
     BCryptPasswordEncoder passwordEncoder;
 
-
     public  AuthResponse login(Auth autenticacion){
-
         Vet result = vetRepository.findFirstByEmail(autenticacion.email);
 
         if (result == null){
@@ -25,7 +23,6 @@ public class AuthService {
         }
 
         boolean match = passwordEncoder.matches(autenticacion.contrasena, result.getContrasena());
-
         if (!match){
             return new AuthResponse(false, "Contraseña Inconrrecta");
         }

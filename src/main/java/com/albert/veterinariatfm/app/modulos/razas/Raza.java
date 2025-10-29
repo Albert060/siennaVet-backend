@@ -17,6 +17,4 @@ public class Raza {
 
     @Column (name = "nombre")
     String nombre;
-
-
 }

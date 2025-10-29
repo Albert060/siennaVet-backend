@@ -29,6 +29,4 @@ public class Cliente {
 
     @Column (name = "codigo_postal")
     String codigoPostal;
-
-
 }
