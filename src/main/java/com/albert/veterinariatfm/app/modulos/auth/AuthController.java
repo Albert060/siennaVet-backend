@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Clase que gestiona por el @RequestBody los datos enviados en el formulario,
+ * y devuelte si es correcto o no.
+ */
 @RestController
 @RequestMapping ("/api/auth")
 public class AuthController {

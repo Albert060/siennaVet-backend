@@ -6,20 +6,20 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Funcion donde se va a manejar toda la logica de los endpoint tratados y donde se van a gestionar
- * los datos
+ * Clase donde se va a manejar toda la logica de veterinario, los endpoint tratados y donde se van a gestionar
+ * los datos.
  */
 @Service
 public class VetService {
 
     /**
-     * Se instancia la funcion VetRepository
+     * Se instancia la funcion VetRepository.
      */
     @Autowired
     VetRepository vetRepository;
 
     /**
-     * Función encargada de obtener todos los veterinarios sin filtros
+     * Función encargada de obtener todos los veterinarios sin filtros mediante una lista.
      * @return List de Vet
      */
     @Transactional
@@ -28,7 +28,7 @@ public class VetService {
     }
 
     /**
-     * Funcion encargada de obtener a los Veterinarios con filtro del parametro id
+     * Funcion encargada de obtener a los Veterinarios con filtro del parametro id.
      * @param id
      * @return
      */
@@ -38,7 +38,7 @@ public class VetService {
     }
 
     /**
-     * Funcion encargada de crear un nuevo Veterinario
+     * Funcion encargada de crear un nuevo Veterinario.
      * @param nuevoVeterinario
      * @return
      */
@@ -48,7 +48,7 @@ public class VetService {
     }
 
     /**
-     * Funcion encargada de actualizar los datos de los Veterinarios
+     * Funcion encargada de actualizar los datos de los Veterinarios.
      * @param nuevoVeterinario
      * @return
      */
@@ -58,7 +58,7 @@ public class VetService {
     }
 
     /**
-     * Funcion encargada de borrar un registro de Veterinario mediante su parametro
+     * Funcion encargada de borrar un registro de Veterinario mediante su parametro.
      * @param id
      */
     @Transactional

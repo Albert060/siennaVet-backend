@@ -2,6 +2,9 @@ package com.albert.veterinariatfm.app.modulos.fichas;
 
 import lombok.*;
 
+/**
+ * Clase para tratar los datos que contiene fichas junto con raza.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

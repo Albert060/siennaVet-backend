@@ -3,6 +3,10 @@ package com.albert.veterinariatfm.app.modulos.fichasActualizaciones;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/**
+ * Clase donde se van a gestionar los parametros (Variable) de fichaActualizacion que se van a solicitar para los diferentes
+ * registro y comunicacion con la base de dato.
+ */
 @Entity
 @Table (name = "fichaActualizacion")
 @Data

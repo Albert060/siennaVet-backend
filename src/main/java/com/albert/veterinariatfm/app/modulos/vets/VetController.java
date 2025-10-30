@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * Funcion que controla las peticiones HTTP y el manejor de CRUD.
+ * Clase que controla las peticiones HTTP y el manejo del CRUD de veterinario.
  */
 @RestController
 @RequestMapping("/api/veterinarios")
 public class VetController {
 
     /**
-     * se instancia la funcion VetService
+     * se instancia la funcion VetService.
      */
     @Autowired
     VetService vetService;
@@ -40,7 +40,7 @@ public class VetController {
 
     /**
      * Funcion encargada en gestionar los datos enviados por el cuerpo del formulario para ser tratado
-     * por el service mediantes las anotaciones de @PostMapping y @RequestBody para crear un veterinario
+     * por el service mediantes las anotaciones de @PostMapping y @RequestBody para crear un veterinario.
      * @param nuevoVeterinario
      * @return
      */
@@ -62,7 +62,7 @@ public class VetController {
 
     /**
      * Funcion encargada de gestionar la eliminacion de un registro de veterinario mediante
-     * la anotacion @DeleteMapping mediante su parametro id
+     * la anotacion @DeleteMapping mediante su parametro id.
      * @param id
      */
     @DeleteMapping("/{id}")
