@@ -25,4 +25,21 @@ public class FichaDTO {
     String chip;
 
     String raza;
+
+    Integer idRaza;
+
+    Integer idCliente;
+
+    static Ficha mapearDtoAEntidad(FichaDTO dto) {
+        Ficha ficha = new Ficha();
+        ficha.setIdFicha(dto.getIdFicha() != null ? dto.getIdFicha().longValue() : null);
+        ficha.setNombre(dto.getNombre());
+        ficha.setSexo(dto.getSexo());
+        ficha.setEdad(dto.getEdad());
+        ficha.setPeso(dto.getPeso());
+        ficha.setChip(dto.getChip());
+        ficha.setIdRaza(dto.getIdRaza() != null ? dto.getIdRaza().longValue() : null);
+        ficha.setIdCliente(dto.getIdCliente() != null ? dto.getIdCliente().longValue() : null);
+        return ficha;
+    }
 }

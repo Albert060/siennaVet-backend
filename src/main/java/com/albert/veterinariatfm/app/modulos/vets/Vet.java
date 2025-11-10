@@ -42,4 +42,20 @@ public class Vet {
 
     @Column (name = "fecha_inicio")
     String fechaInicio;
+
+    @Override
+    public String toString() {
+        return "Vet{" +
+                "idVet=" + idVet +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", dni='" + dni + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", numColegiado='" + numColegiado + '\'' +
+                ", email='" + email + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", fechaInicio='" + fechaInicio + '\'' +
+                '}';
+    }
 }

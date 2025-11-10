@@ -2,6 +2,7 @@ package com.albert.veterinariatfm.app.modulos.vets;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -17,6 +18,8 @@ public class VetService {
      */
     @Autowired
     VetRepository vetRepository;
+    @Autowired
+    BCryptPasswordEncoder encoder;
 
     /**
      * Función encargada de obtener todos los veterinarios sin filtros mediante una lista.
@@ -44,6 +47,7 @@ public class VetService {
      */
     @Transactional
     public Vet crearVeterinarios (Vet nuevoVeterinario){
+        nuevoVeterinario.setContrasena(encoder.encode(nuevoVeterinario.getContrasena()));
         return vetRepository.save(nuevoVeterinario);
     }
 
@@ -54,6 +58,7 @@ public class VetService {
      */
     @Transactional
     public Vet actualizarVeterinarios (Vet nuevoVeterinario){
+        nuevoVeterinario.setContrasena(encoder.encode(nuevoVeterinario.getContrasena()));
         return vetRepository.save(nuevoVeterinario);
     }
 

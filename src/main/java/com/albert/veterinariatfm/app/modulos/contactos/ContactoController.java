@@ -1,20 +1,17 @@
-package com.albert.veterinariatfm.app.modulos.fichas;
+package com.albert.veterinariatfm.app.modulos.contactos;
 
+import com.albert.veterinariatfm.app.modulos.fichas.Ficha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
-/**
- * Clase que controla las peticiones HTTP y el manejo del CRUD de fichas.
- */
 @RestController
-@RequestMapping ("/api/fichas")
-public class FichaController {
+@RequestMapping ("/api/contactos")
+public class ContactoController {
     /**
      * se instancia la funcion FichaService.
      */
     @Autowired
-    FichaService fichaService;
+    ContactoService contactoService;
 
     /**
      * Funcion encargada en recibir la peticion HTTP de la lista de fichas mediante la anotacion
@@ -22,8 +19,8 @@ public class FichaController {
      * @return
      */
     @GetMapping
-    public List<FichaDTO> mostrarFichas (){
-        return fichaService.obtenerFichas();
+    public List<Contacto> mostrarContactos (){
+        return contactoService.obtenerContactos();
     }
 
     /**
@@ -33,30 +30,30 @@ public class FichaController {
      * @return
      */
     @GetMapping("/{id}")
-    public Ficha mostrarPorId (@PathVariable Long id ){
-        return fichaService.obtenerPorId(id);
+    public Contacto mostrarPorId (@PathVariable Long id ){
+        return contactoService.obtenerPorId(id);
     }
 
     /**
      * Funcion encargada en gestionar los datos enviados por el cuerpo del formulario para ser tratado
      * por el service mediantes las anotaciones de @PostMapping y @RequestBody para crear una ficha.
-     * @param nuevaFicha
+     * @param nuevoContacto
      * @return
      */
     @PostMapping
-    public Ficha crearFicha (@RequestBody Ficha nuevaFicha){
-        return fichaService.crearFicha(nuevaFicha);
+    public Contacto crearContacto (@RequestBody Contacto nuevoContacto){
+        return contactoService.crearContacto(nuevoContacto);
     }
 
     /**
      * funcion encargada de gestionar una actualizacion de un registro de ficha mediante la anotacion
      * @PutMapping y delegando al fichaService la modificación.
-     * @param actualizarFicha
+     * @param actualizarcontacto
      * @return
      */
     @PutMapping
-    public Ficha actualizarFicha (@RequestBody FichaDTO actualizarFicha){
-        return fichaService.actualizarFicha(actualizarFicha);
+    public Contacto actualizarcontacto (@RequestBody Contacto actualizarcontacto){
+        return contactoService.actualizarContacto(actualizarcontacto);
     }
 
     /**
@@ -66,6 +63,6 @@ public class FichaController {
      */
     @DeleteMapping("/{id}")
     public void  borrarPorId (@PathVariable Long id ){
-        fichaService.borrarFicha(id);
+        contactoService.borrarcontacto(id);
     }
 }

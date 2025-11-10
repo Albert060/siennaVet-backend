@@ -51,8 +51,8 @@ public class FichaService {
      * @return
      */
     @Transactional
-    public Ficha actualizarFicha (Ficha nuevaFicha){
-        return fichaRepository.save(nuevaFicha);
+    public Ficha actualizarFicha (FichaDTO nuevaFicha){
+        return fichaRepository.save(FichaDTO.mapearDtoAEntidad(nuevaFicha));
     }
 
     /**
