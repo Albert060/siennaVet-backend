@@ -1,20 +1,20 @@
 package com.albert.veterinariatfm.app.modulos.contactos;
 
-import com.albert.veterinariatfm.app.modulos.fichas.Ficha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+
 @RestController
 @RequestMapping ("/api/contactos")
 public class ContactoController {
     /**
-     * se instancia la funcion FichaService.
+     * se instancia la funcion ContactoService.
      */
     @Autowired
     ContactoService contactoService;
 
     /**
-     * Funcion encargada en recibir la peticion HTTP de la lista de fichas mediante la anotacion
+     * Funcion encargada en recibir la peticion HTTP de la lista de mensajes mediante la anotacion
      * GetMapping y enviarsela al service para que ejecute la respuesta.
      * @return
      */
@@ -24,7 +24,7 @@ public class ContactoController {
     }
 
     /**
-     * Funcion encargada en filtrar la peticion HTTP de una ficha mediante la anotacion
+     * Funcion encargada en filtrar la peticion HTTP de un mensaje mediante la anotacion
      * GetMapping, y el parametro id, y enviarsela al service para que ejecute la respuesta.
      * @param id
      * @return
@@ -36,7 +36,7 @@ public class ContactoController {
 
     /**
      * Funcion encargada en gestionar los datos enviados por el cuerpo del formulario para ser tratado
-     * por el service mediantes las anotaciones de @PostMapping y @RequestBody para crear una ficha.
+     * por el service mediantes las anotaciones de @PostMapping y @RequestBody para crear un mensaje.
      * @param nuevoContacto
      * @return
      */
@@ -46,8 +46,8 @@ public class ContactoController {
     }
 
     /**
-     * funcion encargada de gestionar una actualizacion de un registro de ficha mediante la anotacion
-     * @PutMapping y delegando al fichaService la modificación.
+     * funcion encargada de gestionar una actualizacion de un registro de un mensaje mediante la anotacion
+     * @PutMapping y delegando al contactoService la modificación.
      * @param actualizarcontacto
      * @return
      */
@@ -57,7 +57,7 @@ public class ContactoController {
     }
 
     /**
-     * Funcion encargada de gestionar la eliminacion de un registro de ficha mediante
+     * Funcion encargada de gestionar la eliminacion de un registro de un mensaje mediante
      * la anotacion @DeleteMapping mediante su parametro id.
      * @param id
      */

@@ -10,8 +10,8 @@ public class ContactoService {
     @Autowired
     ContactoRepository contactoRepository;
     /**
-     * Función encargada de obtener todos las Fichas sin filtros mediante una lista.
-     * @return lista fichas
+     * Función encargada de obtener todos los mensajes sin filtros mediante una lista.
+     * @return lista mensajes
      */
     @Transactional
     public List<Contacto> obtenerContactos () {
