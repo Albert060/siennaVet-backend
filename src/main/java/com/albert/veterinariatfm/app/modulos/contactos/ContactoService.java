@@ -15,7 +15,7 @@ public class ContactoService {
      */
     @Transactional
     public List<Contacto> obtenerContactos () {
-        return contactoRepository.findAll();
+        return contactoRepository.findAllByOrderByIdContactoDesc();
     }
 
     /**

@@ -2,6 +2,8 @@ package com.albert.veterinariatfm.app.modulos.fichas;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 /**
@@ -21,8 +23,10 @@ public class FichaService {
      * @return lista fichas
      */
     @Transactional
-    public List<FichaDTO> obtenerFichas () {
-        return fichaRepository.findAllConRaza();
+    public List<FichaDTO> obtenerFichas (int offset, int limit) {
+        Page<FichaDTO> listaFichaPage = fichaRepository.findAllConRaza(PageRequest.of(offset, limit));
+
+        return listaFichaPage.getContent();
     }
 
     /**

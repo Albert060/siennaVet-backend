@@ -3,9 +3,13 @@ package com.albert.veterinariatfm.app.modulos.auth;
 import com.albert.veterinariatfm.app.modulos.vets.Vet;
 import com.albert.veterinariatfm.app.modulos.vets.VetRepository;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.crypto.SecretKey;
+import java.security.Key;
 
 /**
  * Clase que se encarga de gestiona la autenticacion y la logica del Login.
@@ -17,6 +21,8 @@ public class AuthService {
     VetRepository vetRepository;
     @Autowired
     BCryptPasswordEncoder passwordEncoder;
+
+    private final SecretKey secretKey = Keys.hmacShaKeyFor("Wjq80fgqxkqWymlEc51eZAnAr9Ry3lHv".getBytes());
 
     /**
      * funcion que se encarga de validar la autenticacion del login para iniciar un inicio de sesion
@@ -35,7 +41,14 @@ public class AuthService {
         if (!match){
             return new AuthResponse(false, "Contraseña Inconrrecta");
         }
-        String tokem = Jwts.builder().setSubject(result.getIdVet().toString()).setIssuer("siennaVet").compact();
+        String tokem = Jwts.builder()
+                .claim("nombre", result.getNombre())
+                .claim("apellido", result.getApellido())
+                .claim("email", result.getEmail())
+                .setSubject(result.getIdVet().toString())
+                .setIssuer("siennaVet")
+                .signWith(secretKey)
+                .compact();
         return new AuthResponse(true, tokem);
     }
 

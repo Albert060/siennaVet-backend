@@ -22,8 +22,8 @@ public class FichaController {
      * @return
      */
     @GetMapping
-    public List<FichaDTO> mostrarFichas (){
-        return fichaService.obtenerFichas();
+    public List<FichaDTO> mostrarFichas(@RequestParam int offset, @RequestParam int limit) {
+        return fichaService.obtenerFichas(offset, limit);
     }
 
     /**
