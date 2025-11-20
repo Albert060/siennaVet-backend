@@ -19,8 +19,8 @@ public class ContactoController {
      * @return
      */
     @GetMapping
-    public List<Contacto> mostrarContactos (){
-        return contactoService.obtenerContactos();
+    public List<Contacto> mostrarContactos (@RequestParam int offset, @RequestParam int limit){
+        return contactoService.obtenerContactos(offset, limit);
     }
 
     /**

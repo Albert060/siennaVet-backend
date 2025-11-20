@@ -23,8 +23,8 @@ public class VetController {
      * @return
      */
     @GetMapping
-    public List<Vet> mostrarVeterinarios (){
-        return vetService.obtenerVeterinarios();
+    public List<Vet> mostrarVeterinarios (@RequestParam int offset, @RequestParam int limit){
+        return vetService.obtenerVeterinarios(offset, limit);
     }
 
     /**

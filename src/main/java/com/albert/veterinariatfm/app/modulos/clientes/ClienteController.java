@@ -22,8 +22,8 @@ public class ClienteController {
      * @return
      */
     @GetMapping
-    public List<Cliente> mostrarClientes (){
-        return clienteService.obtenerClientes();
+    public List<Cliente> mostrarClientes (@RequestParam int offset, @RequestParam int limit){
+        return clienteService.obtenerClientes(offset, limit);
     }
 
     /**

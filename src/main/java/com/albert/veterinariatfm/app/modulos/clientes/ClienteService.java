@@ -1,7 +1,10 @@
 package com.albert.veterinariatfm.app.modulos.clientes;
 
+import com.albert.veterinariatfm.app.modulos.razas.Raza;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -22,8 +25,10 @@ public class ClienteService {
      * @return lista clientes
      */
     @Transactional
-    public List<Cliente> obtenerClientes (){
-        return clienteRepository.findAll();
+    public List<Cliente> obtenerClientes (int offset, int limit){
+        Page<Cliente> listaClientePage = clienteRepository.findAll(PageRequest.of(offset, limit));
+        
+        return listaClientePage.getContent();
     }
 
     /**

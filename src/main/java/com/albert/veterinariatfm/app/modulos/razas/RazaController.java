@@ -23,8 +23,8 @@ public class RazaController {
      * @return
      */
     @GetMapping
-    public List<Raza> mostrarRaza (){
-        return razaService.obtenerRaza();
+    public List<Raza> mostrarRaza (@RequestParam int offset, @RequestParam int limit){
+        return razaService.obtenerRaza(offset, limit);
     }
 
     /**

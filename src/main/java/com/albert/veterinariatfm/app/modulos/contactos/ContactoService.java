@@ -1,7 +1,10 @@
 package com.albert.veterinariatfm.app.modulos.contactos;
 
+import com.albert.veterinariatfm.app.modulos.fichas.FichaDTO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
@@ -14,8 +17,10 @@ public class ContactoService {
      * @return lista mensajes
      */
     @Transactional
-    public List<Contacto> obtenerContactos () {
-        return contactoRepository.findAllByOrderByIdContactoDesc();
+    public List<Contacto> obtenerContactos (int offset, int limit) {
+        Page<Contacto> listaContactoPage = contactoRepository.findAllByOrderByIdContactoDesc(PageRequest.of(offset, limit));
+
+        return listaContactoPage.getContent();
     }
 
     /**

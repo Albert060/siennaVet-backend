@@ -1,7 +1,10 @@
 package com.albert.veterinariatfm.app.modulos.razas;
 
+import com.albert.veterinariatfm.app.modulos.fichas.FichaDTO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -23,8 +26,10 @@ public class RazaService {
      * @return list Raza
      */
     @Transactional
-    public List<Raza> obtenerRaza (){
-        return razaRepository.findAll();
+    public List<Raza> obtenerRaza (int offset, int limit){
+        Page<Raza> listaRazaPage = razaRepository.findAll(PageRequest.of(offset, limit));
+
+        return listaRazaPage.getContent();
     }
 
     /**
