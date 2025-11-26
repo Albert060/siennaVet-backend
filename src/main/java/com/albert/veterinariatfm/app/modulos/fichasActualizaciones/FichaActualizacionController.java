@@ -23,8 +23,8 @@ public class FichaActualizacionController {
      * @return
      */
     @GetMapping
-    public List<FichaActualizacion> mostrarFichasActualizadas (){
-        return fichaActualizacionService.obtenerFichaActualizacion();
+    public List<FichaActualizacion> mostrarFichasActualizadas (@RequestParam int offset, @RequestParam int limit){
+        return fichaActualizacionService.obtenerFichaActualizacion(offset, limit);
     }
 
     /**

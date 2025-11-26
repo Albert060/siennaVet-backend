@@ -2,6 +2,8 @@ package com.albert.veterinariatfm.app.modulos.fichasActualizaciones;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -23,8 +25,10 @@ public class FichaActualizacionService {
      * @return lista de fichasActualizada
      */
     @Transactional
-    public List<FichaActualizacion> obtenerFichaActualizacion (){
-        return fichaActualizacionRepository.findAll();
+    public List<FichaActualizacion> obtenerFichaActualizacion (int offset, int limit){
+        Page<FichaActualizacion> listaFichaActualizacionPage = fichaActualizacionRepository.findAll(PageRequest.of(offset, limit));
+
+        return listaFichaActualizacionPage.getContent();
     }
 
     /**

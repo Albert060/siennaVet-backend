@@ -22,6 +22,9 @@ public class FichaActualizacion {
     @Column (name = "fecha")
     String fecha;
 
+    @Column (name = "hora")
+    String hora;
+
     @Column (name = "es_Urgencia")
     boolean esUrgencia;
 
