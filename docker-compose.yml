@@ -4,29 +4,4 @@ services:
     build: .
     ports:
       - 8080:8080
-    environment:
-      - DATABASE_URL=jdbc:mysql://veterinariatfm-db:3306/veterinariatfm
-      - DATABASE_USERNAME=root
-      - DATABASE_PASSWORD=root123
-    depends_on:
-      veterinariatfm-db:
-        condition: service_healthy
 
-  veterinariatfm-db:
-    container_name: veterinariatfm-db
-    image: mysql:latest
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: "root123"
-      MYSQL_DATABASE: "veterinariatfm"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
-      timeout: 20s
-      retries: 10
-
-volumes:
-  mysql-data:
-    external: false
