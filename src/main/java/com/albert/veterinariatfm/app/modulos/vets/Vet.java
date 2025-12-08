@@ -3,6 +3,8 @@ package com.albert.veterinariatfm.app.modulos.vets;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 /**
  * Clase donde se van a gestionar los parametros (Variable) de veterinario que se van a solicitar para los diferentes
  * registro y comunicacion con la base de dato.
@@ -41,7 +43,7 @@ public class Vet {
     String telefono;
 
     @Column (name = "fecha_inicio")
-    String fechaInicio;
+    LocalDate fechaInicio;
 
     @Override
     public String toString() {

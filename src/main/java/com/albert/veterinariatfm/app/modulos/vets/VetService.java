@@ -1,6 +1,4 @@
 package com.albert.veterinariatfm.app.modulos.vets;
-
-import com.albert.veterinariatfm.app.modulos.razas.Raza;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

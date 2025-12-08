@@ -3,6 +3,9 @@ package com.albert.veterinariatfm.app.modulos.citas;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 /**
  * Clase donde se van a gestionar los parametros (Variable) de citas que se van a solicitar para los diferentes
  * registro y comunicacion con la base de dato.
@@ -17,13 +20,13 @@ public class Cita {
     Long idCita;
 
     @Column (name = "fecha")
-    String fecha;
+    LocalDate fecha;
 
     @Column (name = "detalles")
     String detalles;
 
     @Column (name = "hora")
-    String hora;
+    LocalTime hora;
 
     @Column (name = "id_ficha")
     Long idFicha;

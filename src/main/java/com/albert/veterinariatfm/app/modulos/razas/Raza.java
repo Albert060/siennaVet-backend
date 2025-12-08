@@ -1,5 +1,4 @@
 package com.albert.veterinariatfm.app.modulos.razas;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
